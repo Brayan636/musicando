@@ -33,5 +33,19 @@ module.exports= function (sequelize, dataTypes){
     }
     
     let Cancion = sequelize.define(alias, cols, config);
+    Cancion.associate = function (models){
+        Cancion.belongsTo(models.Genero, {
+            as: "genero",
+            foreignKey: "genero_id"
+        }),
+        Cancion.belongsTo(models.Album, {
+            as: "album",
+            foreignKey: "album_id"
+        }),
+        Cancion.belongsTo(models.Artista, {
+            as: "artista",
+            foreignKey: "artista_id"
+        })
+    }
     return Cancion;
     }
