@@ -1,0 +1,25 @@
+<%- include header.ejs -%>
+    <h1><%= cancion.titulo %></h1>
+    <p>Welcome to <%= title %></p>
+    <ul>
+  <li>
+      Duracion: <%= cancion.duracion%>
+  </li>
+  <li>
+    Album: <%= cancion.album%>
+</li>
+<li>
+    Artista: <%= cancion.artista%>
+</li>
+<li>
+    Duracion: <%= cancion.duracion%>
+</li>
+  <li> Genero: <%= cancion.genero%> </li>  
+    </ul>
+    <a href="/canciones/editar/<%=cancion.id%>">
+        <button> Editar </button>
+    </a>
+    <form action="/canciones/borrar/<%=cancion.id%>" method="DELETE">
+    <button type="submit">Borrar</button>
+    </form>
+    <%- include footer.ejs -%>
